@@ -17,12 +17,14 @@ public class LoadDatabase {
     CommandLineRunner initDatabase(GreetingsRepository repository) {
         logger.debug("Starting the command line runner......");
         return args -> {
-            logger.info("Preloading..." + repository.save(new Greeting("English","Hello")));
             logger.info("Preloading..." + repository.save(
-                    new Greeting("Spanish","Ola")
+                    new Greeting("English","Hello",true)
             ));
             logger.info("Preloading..." + repository.save(
-                    new Greeting("Russian","Prevyet")
+                    new Greeting("Spanish","Ola",true)
+            ));
+            logger.info("Preloading..." + repository.save(
+                    new Greeting("Russian","Prevyet",true)
             ));
         };
     }
